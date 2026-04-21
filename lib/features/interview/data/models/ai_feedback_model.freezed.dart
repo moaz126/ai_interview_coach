@@ -12,7 +12,8 @@ part of 'ai_feedback_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 AiFeedbackModel _$AiFeedbackModelFromJson(Map<String, dynamic> json) {
   return _AiFeedbackModel.fromJson(json);
@@ -38,16 +39,18 @@ mixin _$AiFeedbackModel {
 /// @nodoc
 abstract class $AiFeedbackModelCopyWith<$Res> {
   factory $AiFeedbackModelCopyWith(
-          AiFeedbackModel value, $Res Function(AiFeedbackModel) then) =
-      _$AiFeedbackModelCopyWithImpl<$Res, AiFeedbackModel>;
+    AiFeedbackModel value,
+    $Res Function(AiFeedbackModel) then,
+  ) = _$AiFeedbackModelCopyWithImpl<$Res, AiFeedbackModel>;
   @useResult
-  $Res call(
-      {String type,
-      @JsonKey(name: 'next_question') String nextQuestion,
-      int? score,
-      String? strengths,
-      String? gaps,
-      @JsonKey(name: 'model_answer') String? modelAnswer});
+  $Res call({
+    String type,
+    @JsonKey(name: 'next_question') String nextQuestion,
+    int? score,
+    String? strengths,
+    String? gaps,
+    @JsonKey(name: 'model_answer') String? modelAnswer,
+  });
 }
 
 /// @nodoc
@@ -70,50 +73,55 @@ class _$AiFeedbackModelCopyWithImpl<$Res, $Val extends AiFeedbackModel>
     Object? gaps = freezed,
     Object? modelAnswer = freezed,
   }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      nextQuestion: null == nextQuestion
-          ? _value.nextQuestion
-          : nextQuestion // ignore: cast_nullable_to_non_nullable
-              as String,
-      score: freezed == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
-              as int?,
-      strengths: freezed == strengths
-          ? _value.strengths
-          : strengths // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gaps: freezed == gaps
-          ? _value.gaps
-          : gaps // ignore: cast_nullable_to_non_nullable
-              as String?,
-      modelAnswer: freezed == modelAnswer
-          ? _value.modelAnswer
-          : modelAnswer // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            type: null == type
+                ? _value.type
+                : type // ignore: cast_nullable_to_non_nullable
+                      as String,
+            nextQuestion: null == nextQuestion
+                ? _value.nextQuestion
+                : nextQuestion // ignore: cast_nullable_to_non_nullable
+                      as String,
+            score: freezed == score
+                ? _value.score
+                : score // ignore: cast_nullable_to_non_nullable
+                      as int?,
+            strengths: freezed == strengths
+                ? _value.strengths
+                : strengths // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            gaps: freezed == gaps
+                ? _value.gaps
+                : gaps // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            modelAnswer: freezed == modelAnswer
+                ? _value.modelAnswer
+                : modelAnswer // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$AiFeedbackModelImplCopyWith<$Res>
     implements $AiFeedbackModelCopyWith<$Res> {
-  factory _$$AiFeedbackModelImplCopyWith(_$AiFeedbackModelImpl value,
-          $Res Function(_$AiFeedbackModelImpl) then) =
-      __$$AiFeedbackModelImplCopyWithImpl<$Res>;
+  factory _$$AiFeedbackModelImplCopyWith(
+    _$AiFeedbackModelImpl value,
+    $Res Function(_$AiFeedbackModelImpl) then,
+  ) = __$$AiFeedbackModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String type,
-      @JsonKey(name: 'next_question') String nextQuestion,
-      int? score,
-      String? strengths,
-      String? gaps,
-      @JsonKey(name: 'model_answer') String? modelAnswer});
+  $Res call({
+    String type,
+    @JsonKey(name: 'next_question') String nextQuestion,
+    int? score,
+    String? strengths,
+    String? gaps,
+    @JsonKey(name: 'model_answer') String? modelAnswer,
+  });
 }
 
 /// @nodoc
@@ -121,8 +129,9 @@ class __$$AiFeedbackModelImplCopyWithImpl<$Res>
     extends _$AiFeedbackModelCopyWithImpl<$Res, _$AiFeedbackModelImpl>
     implements _$$AiFeedbackModelImplCopyWith<$Res> {
   __$$AiFeedbackModelImplCopyWithImpl(
-      _$AiFeedbackModelImpl _value, $Res Function(_$AiFeedbackModelImpl) _then)
-      : super(_value, _then);
+    _$AiFeedbackModelImpl _value,
+    $Res Function(_$AiFeedbackModelImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -134,45 +143,48 @@ class __$$AiFeedbackModelImplCopyWithImpl<$Res>
     Object? gaps = freezed,
     Object? modelAnswer = freezed,
   }) {
-    return _then(_$AiFeedbackModelImpl(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      nextQuestion: null == nextQuestion
-          ? _value.nextQuestion
-          : nextQuestion // ignore: cast_nullable_to_non_nullable
-              as String,
-      score: freezed == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
-              as int?,
-      strengths: freezed == strengths
-          ? _value.strengths
-          : strengths // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gaps: freezed == gaps
-          ? _value.gaps
-          : gaps // ignore: cast_nullable_to_non_nullable
-              as String?,
-      modelAnswer: freezed == modelAnswer
-          ? _value.modelAnswer
-          : modelAnswer // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$AiFeedbackModelImpl(
+        type: null == type
+            ? _value.type
+            : type // ignore: cast_nullable_to_non_nullable
+                  as String,
+        nextQuestion: null == nextQuestion
+            ? _value.nextQuestion
+            : nextQuestion // ignore: cast_nullable_to_non_nullable
+                  as String,
+        score: freezed == score
+            ? _value.score
+            : score // ignore: cast_nullable_to_non_nullable
+                  as int?,
+        strengths: freezed == strengths
+            ? _value.strengths
+            : strengths // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        gaps: freezed == gaps
+            ? _value.gaps
+            : gaps // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        modelAnswer: freezed == modelAnswer
+            ? _value.modelAnswer
+            : modelAnswer // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$AiFeedbackModelImpl implements _AiFeedbackModel {
-  const _$AiFeedbackModelImpl(
-      {required this.type,
-      @JsonKey(name: 'next_question') required this.nextQuestion,
-      this.score,
-      this.strengths,
-      this.gaps,
-      @JsonKey(name: 'model_answer') this.modelAnswer});
+  const _$AiFeedbackModelImpl({
+    required this.type,
+    @JsonKey(name: 'next_question') required this.nextQuestion,
+    this.score,
+    this.strengths,
+    this.gaps,
+    @JsonKey(name: 'model_answer') this.modelAnswer,
+  });
 
   factory _$AiFeedbackModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$AiFeedbackModelImplFromJson(json);
@@ -216,32 +228,39 @@ class _$AiFeedbackModelImpl implements _AiFeedbackModel {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, type, nextQuestion, score, strengths, gaps, modelAnswer);
+    runtimeType,
+    type,
+    nextQuestion,
+    score,
+    strengths,
+    gaps,
+    modelAnswer,
+  );
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AiFeedbackModelImplCopyWith<_$AiFeedbackModelImpl> get copyWith =>
       __$$AiFeedbackModelImplCopyWithImpl<_$AiFeedbackModelImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AiFeedbackModelImplToJson(
-      this,
-    );
+    return _$$AiFeedbackModelImplToJson(this);
   }
 }
 
 abstract class _AiFeedbackModel implements AiFeedbackModel {
-  const factory _AiFeedbackModel(
-          {required final String type,
-          @JsonKey(name: 'next_question') required final String nextQuestion,
-          final int? score,
-          final String? strengths,
-          final String? gaps,
-          @JsonKey(name: 'model_answer') final String? modelAnswer}) =
-      _$AiFeedbackModelImpl;
+  const factory _AiFeedbackModel({
+    required final String type,
+    @JsonKey(name: 'next_question') required final String nextQuestion,
+    final int? score,
+    final String? strengths,
+    final String? gaps,
+    @JsonKey(name: 'model_answer') final String? modelAnswer,
+  }) = _$AiFeedbackModelImpl;
 
   factory _AiFeedbackModel.fromJson(Map<String, dynamic> json) =
       _$AiFeedbackModelImpl.fromJson;

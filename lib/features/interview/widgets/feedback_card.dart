@@ -48,7 +48,9 @@ class FeedbackCard extends StatelessWidget {
                       children: [
                         Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 12, vertical: 6),
+                            horizontal: 12,
+                            vertical: 6,
+                          ),
                           decoration: BoxDecoration(
                             color: _scoreColor(feedback.score!),
                             borderRadius: BorderRadius.circular(20),
@@ -56,8 +58,11 @@ class FeedbackCard extends StatelessWidget {
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              const Icon(Icons.star_rounded,
-                                  size: 16, color: Colors.white),
+                              const Icon(
+                                Icons.star_rounded,
+                                size: 16,
+                                color: Colors.white,
+                              ),
                               const SizedBox(width: 4),
                               Text(
                                 '${feedback.score}/5',
@@ -93,8 +98,7 @@ class FeedbackCard extends StatelessWidget {
                   ],
 
                   // Gaps
-                  if (feedback.gaps != null &&
-                      feedback.gaps!.isNotEmpty) ...[
+                  if (feedback.gaps != null && feedback.gaps!.isNotEmpty) ...[
                     _FeedbackSection(
                       icon: Icons.info_rounded,
                       iconColor: const Color(0xFFFF9800),

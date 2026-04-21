@@ -20,9 +20,8 @@ class GeminiRequestModel with _$GeminiRequestModel {
 
 @freezed
 class GeminiSystemInstruction with _$GeminiSystemInstruction {
-  const factory GeminiSystemInstruction({
-    required List<GeminiPart> parts,
-  }) = _GeminiSystemInstruction;
+  const factory GeminiSystemInstruction({required List<GeminiPart> parts}) =
+      _GeminiSystemInstruction;
 
   factory GeminiSystemInstruction.fromJson(Map<String, dynamic> json) =>
       _$GeminiSystemInstructionFromJson(json);
@@ -41,9 +40,7 @@ class GeminiContent with _$GeminiContent {
 
 @freezed
 class GeminiPart with _$GeminiPart {
-  const factory GeminiPart({
-    required String text,
-  }) = _GeminiPart;
+  const factory GeminiPart({required String text}) = _GeminiPart;
 
   factory GeminiPart.fromJson(Map<String, dynamic> json) =>
       _$GeminiPartFromJson(json);

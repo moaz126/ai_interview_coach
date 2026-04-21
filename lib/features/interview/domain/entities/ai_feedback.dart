@@ -19,6 +19,12 @@ class AiFeedback extends Equatable {
   });
 
   @override
-  List<Object?> get props =>
-      [type, nextQuestion, score, strengths, gaps, modelAnswer];
+  List<Object?> get props => [
+    type,
+    nextQuestion,
+    score,
+    strengths,
+    gaps,
+    modelAnswer,
+  ];
 }

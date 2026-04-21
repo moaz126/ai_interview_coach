@@ -16,9 +16,8 @@ class GeminiResponseModel with _$GeminiResponseModel {
 
 @freezed
 class GeminiCandidate with _$GeminiCandidate {
-  const factory GeminiCandidate({
-    required GeminiCandidateContent content,
-  }) = _GeminiCandidate;
+  const factory GeminiCandidate({required GeminiCandidateContent content}) =
+      _GeminiCandidate;
 
   factory GeminiCandidate.fromJson(Map<String, dynamic> json) =>
       _$GeminiCandidateFromJson(json);
@@ -36,9 +35,8 @@ class GeminiCandidateContent with _$GeminiCandidateContent {
 
 @freezed
 class GeminiCandidatePart with _$GeminiCandidatePart {
-  const factory GeminiCandidatePart({
-    required String text,
-  }) = _GeminiCandidatePart;
+  const factory GeminiCandidatePart({required String text}) =
+      _GeminiCandidatePart;
 
   factory GeminiCandidatePart.fromJson(Map<String, dynamic> json) =>
       _$GeminiCandidatePartFromJson(json);

@@ -16,7 +16,7 @@ class SessionLocalDataSourceImpl implements SessionLocalDataSource {
   final Box<HiveInterviewSession> _box;
 
   SessionLocalDataSourceImpl({required Box<HiveInterviewSession> box})
-      : _box = box;
+    : _box = box;
 
   @override
   Future<void> saveSession(InterviewSession session) async {
@@ -37,11 +37,7 @@ class SessionLocalDataSourceImpl implements SessionLocalDataSource {
 /// Maps [HiveChatMessage] to domain [ChatMessage].
 extension HiveChatMessageMapper on HiveChatMessage {
   ChatMessage toEntity() {
-    return ChatMessage(
-      role: role,
-      content: content,
-      timestamp: timestamp,
-    );
+    return ChatMessage(role: role, content: content, timestamp: timestamp);
   }
 }
 

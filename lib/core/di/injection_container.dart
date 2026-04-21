@@ -2,7 +2,9 @@ import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../features/interview/bloc/interview_cubit.dart';
-import '../../features/interview/data/datasources/gemini_remote_datasource.dart';
+import '../constants/ai_provider_config.dart';
+import '../../features/interview/data/datasources/ai_datasource_factory.dart';
+import '../../features/interview/data/datasources/ai_remote_datasource.dart';
 import '../../features/interview/data/datasources/session_local_datasource.dart';
 import '../../features/interview/data/local/hive_interview_session.dart';
 import '../../features/interview/data/repositories/interview_repository_impl.dart';
@@ -19,12 +21,16 @@ Future<void> init() async {
   final box = await Hive.openBox<HiveInterviewSession>('sessions');
   sl.registerSingleton<Box<HiveInterviewSession>>(box);
 
-  // Step 2 — Core (Dio)
+  // Step 2 — Core (Dio & Config)
   sl.registerLazySingleton<DioClient>(() => DioClient.instance);
 
+  final config = AiProviderConfig.gemini();
+  sl.registerSingleton<AiProviderConfig>(config);
+
   // Step 3 — DataSources
-  sl.registerLazySingleton<GeminiRemoteDataSource>(
-    () => GeminiRemoteDataSourceImpl(dio: sl<DioClient>()),
+  sl.registerLazySingleton<AiRemoteDataSource>(
+    () =>
+        AiDatasourceFactory.create(sl<AiProviderConfig>(), sl<DioClient>().dio),
   );
   sl.registerLazySingleton<SessionLocalDataSource>(
     () => SessionLocalDataSourceImpl(box: sl<Box<HiveInterviewSession>>()),
@@ -33,7 +39,7 @@ Future<void> init() async {
   // Step 4 — Repository
   sl.registerLazySingleton<InterviewRepository>(
     () => InterviewRepositoryImpl(
-      remoteDataSource: sl<GeminiRemoteDataSource>(),
+      remoteDataSource: sl<AiRemoteDataSource>(),
       localDataSource: sl<SessionLocalDataSource>(),
     ),
   );
@@ -42,11 +48,14 @@ Future<void> init() async {
   sl.registerLazySingleton(() => SendMessageUseCase(sl<InterviewRepository>()));
   sl.registerLazySingleton(() => SaveSessionUseCase(sl<InterviewRepository>()));
   sl.registerLazySingleton(
-      () => GetSessionHistoryUseCase(sl<InterviewRepository>()));
+    () => GetSessionHistoryUseCase(sl<InterviewRepository>()),
+  );
 
   // Step 6 — Cubit (registerFactory — NOT singleton, fresh state per session)
-  sl.registerFactory(() => InterviewCubit(
-        sendMessageUseCase: sl<SendMessageUseCase>(),
-        saveSessionUseCase: sl<SaveSessionUseCase>(),
-      ));
+  sl.registerFactory(
+    () => InterviewCubit(
+      sendMessageUseCase: sl<SendMessageUseCase>(),
+      saveSessionUseCase: sl<SaveSessionUseCase>(),
+    ),
+  );
 }

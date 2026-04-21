@@ -12,7 +12,8 @@ part of 'chat_message_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 ChatMessageModel _$ChatMessageModelFromJson(Map<String, dynamic> json) {
   return _ChatMessageModel.fromJson(json);
@@ -32,8 +33,9 @@ mixin _$ChatMessageModel {
 /// @nodoc
 abstract class $ChatMessageModelCopyWith<$Res> {
   factory $ChatMessageModelCopyWith(
-          ChatMessageModel value, $Res Function(ChatMessageModel) then) =
-      _$ChatMessageModelCopyWithImpl<$Res, ChatMessageModel>;
+    ChatMessageModel value,
+    $Res Function(ChatMessageModel) then,
+  ) = _$ChatMessageModelCopyWithImpl<$Res, ChatMessageModel>;
   @useResult
   $Res call({String role, String content});
 }
@@ -50,29 +52,30 @@ class _$ChatMessageModelCopyWithImpl<$Res, $Val extends ChatMessageModel>
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? role = null,
-    Object? content = null,
-  }) {
-    return _then(_value.copyWith(
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? role = null, Object? content = null}) {
+    return _then(
+      _value.copyWith(
+            role: null == role
+                ? _value.role
+                : role // ignore: cast_nullable_to_non_nullable
+                      as String,
+            content: null == content
+                ? _value.content
+                : content // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$ChatMessageModelImplCopyWith<$Res>
     implements $ChatMessageModelCopyWith<$Res> {
-  factory _$$ChatMessageModelImplCopyWith(_$ChatMessageModelImpl value,
-          $Res Function(_$ChatMessageModelImpl) then) =
-      __$$ChatMessageModelImplCopyWithImpl<$Res>;
+  factory _$$ChatMessageModelImplCopyWith(
+    _$ChatMessageModelImpl value,
+    $Res Function(_$ChatMessageModelImpl) then,
+  ) = __$$ChatMessageModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String role, String content});
@@ -82,26 +85,26 @@ abstract class _$$ChatMessageModelImplCopyWith<$Res>
 class __$$ChatMessageModelImplCopyWithImpl<$Res>
     extends _$ChatMessageModelCopyWithImpl<$Res, _$ChatMessageModelImpl>
     implements _$$ChatMessageModelImplCopyWith<$Res> {
-  __$$ChatMessageModelImplCopyWithImpl(_$ChatMessageModelImpl _value,
-      $Res Function(_$ChatMessageModelImpl) _then)
-      : super(_value, _then);
+  __$$ChatMessageModelImplCopyWithImpl(
+    _$ChatMessageModelImpl _value,
+    $Res Function(_$ChatMessageModelImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? role = null,
-    Object? content = null,
-  }) {
-    return _then(_$ChatMessageModelImpl(
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? role = null, Object? content = null}) {
+    return _then(
+      _$ChatMessageModelImpl(
+        role: null == role
+            ? _value.role
+            : role // ignore: cast_nullable_to_non_nullable
+                  as String,
+        content: null == content
+            ? _value.content
+            : content // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -141,20 +144,21 @@ class _$ChatMessageModelImpl implements _ChatMessageModel {
   @pragma('vm:prefer-inline')
   _$$ChatMessageModelImplCopyWith<_$ChatMessageModelImpl> get copyWith =>
       __$$ChatMessageModelImplCopyWithImpl<_$ChatMessageModelImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ChatMessageModelImplToJson(
-      this,
-    );
+    return _$$ChatMessageModelImplToJson(this);
   }
 }
 
 abstract class _ChatMessageModel implements ChatMessageModel {
-  const factory _ChatMessageModel(
-      {required final String role,
-      required final String content}) = _$ChatMessageModelImpl;
+  const factory _ChatMessageModel({
+    required final String role,
+    required final String content,
+  }) = _$ChatMessageModelImpl;
 
   factory _ChatMessageModel.fromJson(Map<String, dynamic> json) =
       _$ChatMessageModelImpl.fromJson;

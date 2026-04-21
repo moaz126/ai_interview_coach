@@ -43,7 +43,7 @@ flutter pub run build_runner build --delete-conflicting-outputs
 ### 3. Run with API key
 
 ```bash
-flutter run --dart-define=GEMINI_API_KEY=YOUR_KEY_HERE
+flutter run --dart-define=AI_API_KEY=YOUR_KEY_HERE
 ```
 
 > **Note**: Get your API key from [Google AI Studio](https://aistudio.google.com/apikey). Never hardcode it in source files.

@@ -54,8 +54,10 @@ class TypingIndicator extends HookWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: List.generate(3, (index) {
                     final delay = index * 0.2;
-                    final value =
-                        ((controller.value - delay) % 1.0).clamp(0.0, 1.0);
+                    final value = ((controller.value - delay) % 1.0).clamp(
+                      0.0,
+                      1.0,
+                    );
                     final bounce = _bounceCurve(value);
 
                     return Padding(

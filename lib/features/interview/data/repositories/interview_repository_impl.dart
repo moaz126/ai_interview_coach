@@ -6,7 +6,7 @@ import '../../domain/entities/ai_feedback.dart';
 import '../../domain/entities/chat_message.dart';
 import '../../domain/entities/interview_session.dart';
 import '../../domain/repositories/interview_repository.dart';
-import '../datasources/gemini_remote_datasource.dart';
+import '../datasources/ai_remote_datasource.dart';
 import '../datasources/session_local_datasource.dart';
 
 /// Concrete implementation of [InterviewRepository].
@@ -14,14 +14,14 @@ import '../datasources/session_local_datasource.dart';
 /// Delegates to remote (Gemini API) and local (Hive) data sources,
 /// catching exceptions and mapping them to domain [Failure] objects.
 class InterviewRepositoryImpl implements InterviewRepository {
-  final GeminiRemoteDataSource _remoteDataSource;
+  final AiRemoteDataSource _remoteDataSource;
   final SessionLocalDataSource _localDataSource;
 
   InterviewRepositoryImpl({
-    required GeminiRemoteDataSource remoteDataSource,
+    required AiRemoteDataSource remoteDataSource,
     required SessionLocalDataSource localDataSource,
-  })  : _remoteDataSource = remoteDataSource,
-        _localDataSource = localDataSource;
+  }) : _remoteDataSource = remoteDataSource,
+       _localDataSource = localDataSource;
 
   @override
   Future<({Failure? failure, AiFeedback? feedback})> sendMessage({
@@ -53,10 +53,7 @@ class InterviewRepositoryImpl implements InterviewRepository {
     } on ServerException catch (e) {
       return (failure: ServerFailure(e.message), feedback: null);
     } catch (e) {
-      return (
-        failure: ServerFailure('Unexpected error: $e'),
-        feedback: null,
-      );
+      return (failure: ServerFailure('Unexpected error: $e'), feedback: null);
     }
   }
 
@@ -74,14 +71,17 @@ class InterviewRepositoryImpl implements InterviewRepository {
 
   @override
   Future<({Failure? failure, List<InterviewSession>? sessions})>
-      getSessionHistory() async {
+  getSessionHistory() async {
     try {
       final sessions = await _localDataSource.getSessionHistory();
       return (failure: null, sessions: sessions);
     } on CacheException catch (e) {
       return (failure: CacheFailure(e.message), sessions: null);
     } catch (e) {
-      return (failure: CacheFailure('Failed to load history: $e'), sessions: null);
+      return (
+        failure: CacheFailure('Failed to load history: $e'),
+        sessions: null,
+      );
     }
   }
 }

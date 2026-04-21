@@ -12,7 +12,8 @@ part of 'gemini_request_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 GeminiRequestModel _$GeminiRequestModelFromJson(Map<String, dynamic> json) {
   return _GeminiRequestModel.fromJson(json);
@@ -37,15 +38,16 @@ mixin _$GeminiRequestModel {
 /// @nodoc
 abstract class $GeminiRequestModelCopyWith<$Res> {
   factory $GeminiRequestModelCopyWith(
-          GeminiRequestModel value, $Res Function(GeminiRequestModel) then) =
-      _$GeminiRequestModelCopyWithImpl<$Res, GeminiRequestModel>;
+    GeminiRequestModel value,
+    $Res Function(GeminiRequestModel) then,
+  ) = _$GeminiRequestModelCopyWithImpl<$Res, GeminiRequestModel>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'system_instruction')
-      GeminiSystemInstruction systemInstruction,
-      List<GeminiContent> contents,
-      @JsonKey(name: 'generationConfig')
-      GeminiGenerationConfig generationConfig});
+  $Res call({
+    @JsonKey(name: 'system_instruction')
+    GeminiSystemInstruction systemInstruction,
+    List<GeminiContent> contents,
+    @JsonKey(name: 'generationConfig') GeminiGenerationConfig generationConfig,
+  });
 
   $GeminiSystemInstructionCopyWith<$Res> get systemInstruction;
   $GeminiGenerationConfigCopyWith<$Res> get generationConfig;
@@ -68,27 +70,31 @@ class _$GeminiRequestModelCopyWithImpl<$Res, $Val extends GeminiRequestModel>
     Object? contents = null,
     Object? generationConfig = null,
   }) {
-    return _then(_value.copyWith(
-      systemInstruction: null == systemInstruction
-          ? _value.systemInstruction
-          : systemInstruction // ignore: cast_nullable_to_non_nullable
-              as GeminiSystemInstruction,
-      contents: null == contents
-          ? _value.contents
-          : contents // ignore: cast_nullable_to_non_nullable
-              as List<GeminiContent>,
-      generationConfig: null == generationConfig
-          ? _value.generationConfig
-          : generationConfig // ignore: cast_nullable_to_non_nullable
-              as GeminiGenerationConfig,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            systemInstruction: null == systemInstruction
+                ? _value.systemInstruction
+                : systemInstruction // ignore: cast_nullable_to_non_nullable
+                      as GeminiSystemInstruction,
+            contents: null == contents
+                ? _value.contents
+                : contents // ignore: cast_nullable_to_non_nullable
+                      as List<GeminiContent>,
+            generationConfig: null == generationConfig
+                ? _value.generationConfig
+                : generationConfig // ignore: cast_nullable_to_non_nullable
+                      as GeminiGenerationConfig,
+          )
+          as $Val,
+    );
   }
 
   @override
   @pragma('vm:prefer-inline')
   $GeminiSystemInstructionCopyWith<$Res> get systemInstruction {
-    return $GeminiSystemInstructionCopyWith<$Res>(_value.systemInstruction,
-        (value) {
+    return $GeminiSystemInstructionCopyWith<$Res>(_value.systemInstruction, (
+      value,
+    ) {
       return _then(_value.copyWith(systemInstruction: value) as $Val);
     });
   }
@@ -96,8 +102,9 @@ class _$GeminiRequestModelCopyWithImpl<$Res, $Val extends GeminiRequestModel>
   @override
   @pragma('vm:prefer-inline')
   $GeminiGenerationConfigCopyWith<$Res> get generationConfig {
-    return $GeminiGenerationConfigCopyWith<$Res>(_value.generationConfig,
-        (value) {
+    return $GeminiGenerationConfigCopyWith<$Res>(_value.generationConfig, (
+      value,
+    ) {
       return _then(_value.copyWith(generationConfig: value) as $Val);
     });
   }
@@ -106,17 +113,18 @@ class _$GeminiRequestModelCopyWithImpl<$Res, $Val extends GeminiRequestModel>
 /// @nodoc
 abstract class _$$GeminiRequestModelImplCopyWith<$Res>
     implements $GeminiRequestModelCopyWith<$Res> {
-  factory _$$GeminiRequestModelImplCopyWith(_$GeminiRequestModelImpl value,
-          $Res Function(_$GeminiRequestModelImpl) then) =
-      __$$GeminiRequestModelImplCopyWithImpl<$Res>;
+  factory _$$GeminiRequestModelImplCopyWith(
+    _$GeminiRequestModelImpl value,
+    $Res Function(_$GeminiRequestModelImpl) then,
+  ) = __$$GeminiRequestModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'system_instruction')
-      GeminiSystemInstruction systemInstruction,
-      List<GeminiContent> contents,
-      @JsonKey(name: 'generationConfig')
-      GeminiGenerationConfig generationConfig});
+  $Res call({
+    @JsonKey(name: 'system_instruction')
+    GeminiSystemInstruction systemInstruction,
+    List<GeminiContent> contents,
+    @JsonKey(name: 'generationConfig') GeminiGenerationConfig generationConfig,
+  });
 
   @override
   $GeminiSystemInstructionCopyWith<$Res> get systemInstruction;
@@ -128,9 +136,10 @@ abstract class _$$GeminiRequestModelImplCopyWith<$Res>
 class __$$GeminiRequestModelImplCopyWithImpl<$Res>
     extends _$GeminiRequestModelCopyWithImpl<$Res, _$GeminiRequestModelImpl>
     implements _$$GeminiRequestModelImplCopyWith<$Res> {
-  __$$GeminiRequestModelImplCopyWithImpl(_$GeminiRequestModelImpl _value,
-      $Res Function(_$GeminiRequestModelImpl) _then)
-      : super(_value, _then);
+  __$$GeminiRequestModelImplCopyWithImpl(
+    _$GeminiRequestModelImpl _value,
+    $Res Function(_$GeminiRequestModelImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -139,31 +148,33 @@ class __$$GeminiRequestModelImplCopyWithImpl<$Res>
     Object? contents = null,
     Object? generationConfig = null,
   }) {
-    return _then(_$GeminiRequestModelImpl(
-      systemInstruction: null == systemInstruction
-          ? _value.systemInstruction
-          : systemInstruction // ignore: cast_nullable_to_non_nullable
-              as GeminiSystemInstruction,
-      contents: null == contents
-          ? _value._contents
-          : contents // ignore: cast_nullable_to_non_nullable
-              as List<GeminiContent>,
-      generationConfig: null == generationConfig
-          ? _value.generationConfig
-          : generationConfig // ignore: cast_nullable_to_non_nullable
-              as GeminiGenerationConfig,
-    ));
+    return _then(
+      _$GeminiRequestModelImpl(
+        systemInstruction: null == systemInstruction
+            ? _value.systemInstruction
+            : systemInstruction // ignore: cast_nullable_to_non_nullable
+                  as GeminiSystemInstruction,
+        contents: null == contents
+            ? _value._contents
+            : contents // ignore: cast_nullable_to_non_nullable
+                  as List<GeminiContent>,
+        generationConfig: null == generationConfig
+            ? _value.generationConfig
+            : generationConfig // ignore: cast_nullable_to_non_nullable
+                  as GeminiGenerationConfig,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$GeminiRequestModelImpl implements _GeminiRequestModel {
-  const _$GeminiRequestModelImpl(
-      {@JsonKey(name: 'system_instruction') required this.systemInstruction,
-      required final List<GeminiContent> contents,
-      @JsonKey(name: 'generationConfig') required this.generationConfig})
-      : _contents = contents;
+  const _$GeminiRequestModelImpl({
+    @JsonKey(name: 'system_instruction') required this.systemInstruction,
+    required final List<GeminiContent> contents,
+    @JsonKey(name: 'generationConfig') required this.generationConfig,
+  }) : _contents = contents;
 
   factory _$GeminiRequestModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$GeminiRequestModelImplFromJson(json);
@@ -202,32 +213,36 @@ class _$GeminiRequestModelImpl implements _GeminiRequestModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, systemInstruction,
-      const DeepCollectionEquality().hash(_contents), generationConfig);
+  int get hashCode => Object.hash(
+    runtimeType,
+    systemInstruction,
+    const DeepCollectionEquality().hash(_contents),
+    generationConfig,
+  );
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GeminiRequestModelImplCopyWith<_$GeminiRequestModelImpl> get copyWith =>
       __$$GeminiRequestModelImplCopyWithImpl<_$GeminiRequestModelImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeminiRequestModelImplToJson(
-      this,
-    );
+    return _$$GeminiRequestModelImplToJson(this);
   }
 }
 
 abstract class _GeminiRequestModel implements GeminiRequestModel {
-  const factory _GeminiRequestModel(
-          {@JsonKey(name: 'system_instruction')
-          required final GeminiSystemInstruction systemInstruction,
-          required final List<GeminiContent> contents,
-          @JsonKey(name: 'generationConfig')
-          required final GeminiGenerationConfig generationConfig}) =
-      _$GeminiRequestModelImpl;
+  const factory _GeminiRequestModel({
+    @JsonKey(name: 'system_instruction')
+    required final GeminiSystemInstruction systemInstruction,
+    required final List<GeminiContent> contents,
+    @JsonKey(name: 'generationConfig')
+    required final GeminiGenerationConfig generationConfig,
+  }) = _$GeminiRequestModelImpl;
 
   factory _GeminiRequestModel.fromJson(Map<String, dynamic> json) =
       _$GeminiRequestModelImpl.fromJson;
@@ -247,7 +262,8 @@ abstract class _GeminiRequestModel implements GeminiRequestModel {
 }
 
 GeminiSystemInstruction _$GeminiSystemInstructionFromJson(
-    Map<String, dynamic> json) {
+  Map<String, dynamic> json,
+) {
   return _GeminiSystemInstruction.fromJson(json);
 }
 
@@ -263,16 +279,19 @@ mixin _$GeminiSystemInstruction {
 
 /// @nodoc
 abstract class $GeminiSystemInstructionCopyWith<$Res> {
-  factory $GeminiSystemInstructionCopyWith(GeminiSystemInstruction value,
-          $Res Function(GeminiSystemInstruction) then) =
-      _$GeminiSystemInstructionCopyWithImpl<$Res, GeminiSystemInstruction>;
+  factory $GeminiSystemInstructionCopyWith(
+    GeminiSystemInstruction value,
+    $Res Function(GeminiSystemInstruction) then,
+  ) = _$GeminiSystemInstructionCopyWithImpl<$Res, GeminiSystemInstruction>;
   @useResult
   $Res call({List<GeminiPart> parts});
 }
 
 /// @nodoc
-class _$GeminiSystemInstructionCopyWithImpl<$Res,
-        $Val extends GeminiSystemInstruction>
+class _$GeminiSystemInstructionCopyWithImpl<
+  $Res,
+  $Val extends GeminiSystemInstruction
+>
     implements $GeminiSystemInstructionCopyWith<$Res> {
   _$GeminiSystemInstructionCopyWithImpl(this._value, this._then);
 
@@ -283,15 +302,16 @@ class _$GeminiSystemInstructionCopyWithImpl<$Res,
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? parts = null,
-  }) {
-    return _then(_value.copyWith(
-      parts: null == parts
-          ? _value.parts
-          : parts // ignore: cast_nullable_to_non_nullable
-              as List<GeminiPart>,
-    ) as $Val);
+  $Res call({Object? parts = null}) {
+    return _then(
+      _value.copyWith(
+            parts: null == parts
+                ? _value.parts
+                : parts // ignore: cast_nullable_to_non_nullable
+                      as List<GeminiPart>,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -299,9 +319,9 @@ class _$GeminiSystemInstructionCopyWithImpl<$Res,
 abstract class _$$GeminiSystemInstructionImplCopyWith<$Res>
     implements $GeminiSystemInstructionCopyWith<$Res> {
   factory _$$GeminiSystemInstructionImplCopyWith(
-          _$GeminiSystemInstructionImpl value,
-          $Res Function(_$GeminiSystemInstructionImpl) then) =
-      __$$GeminiSystemInstructionImplCopyWithImpl<$Res>;
+    _$GeminiSystemInstructionImpl value,
+    $Res Function(_$GeminiSystemInstructionImpl) then,
+  ) = __$$GeminiSystemInstructionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<GeminiPart> parts});
@@ -309,25 +329,28 @@ abstract class _$$GeminiSystemInstructionImplCopyWith<$Res>
 
 /// @nodoc
 class __$$GeminiSystemInstructionImplCopyWithImpl<$Res>
-    extends _$GeminiSystemInstructionCopyWithImpl<$Res,
-        _$GeminiSystemInstructionImpl>
+    extends
+        _$GeminiSystemInstructionCopyWithImpl<
+          $Res,
+          _$GeminiSystemInstructionImpl
+        >
     implements _$$GeminiSystemInstructionImplCopyWith<$Res> {
   __$$GeminiSystemInstructionImplCopyWithImpl(
-      _$GeminiSystemInstructionImpl _value,
-      $Res Function(_$GeminiSystemInstructionImpl) _then)
-      : super(_value, _then);
+    _$GeminiSystemInstructionImpl _value,
+    $Res Function(_$GeminiSystemInstructionImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? parts = null,
-  }) {
-    return _then(_$GeminiSystemInstructionImpl(
-      parts: null == parts
-          ? _value._parts
-          : parts // ignore: cast_nullable_to_non_nullable
-              as List<GeminiPart>,
-    ));
+  $Res call({Object? parts = null}) {
+    return _then(
+      _$GeminiSystemInstructionImpl(
+        parts: null == parts
+            ? _value._parts
+            : parts // ignore: cast_nullable_to_non_nullable
+                  as List<GeminiPart>,
+      ),
+    );
   }
 }
 
@@ -335,7 +358,7 @@ class __$$GeminiSystemInstructionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$GeminiSystemInstructionImpl implements _GeminiSystemInstruction {
   const _$GeminiSystemInstructionImpl({required final List<GeminiPart> parts})
-      : _parts = parts;
+    : _parts = parts;
 
   factory _$GeminiSystemInstructionImpl.fromJson(Map<String, dynamic> json) =>
       _$$GeminiSystemInstructionImplFromJson(json);
@@ -370,20 +393,21 @@ class _$GeminiSystemInstructionImpl implements _GeminiSystemInstruction {
   @override
   @pragma('vm:prefer-inline')
   _$$GeminiSystemInstructionImplCopyWith<_$GeminiSystemInstructionImpl>
-      get copyWith => __$$GeminiSystemInstructionImplCopyWithImpl<
-          _$GeminiSystemInstructionImpl>(this, _$identity);
+  get copyWith =>
+      __$$GeminiSystemInstructionImplCopyWithImpl<
+        _$GeminiSystemInstructionImpl
+      >(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeminiSystemInstructionImplToJson(
-      this,
-    );
+    return _$$GeminiSystemInstructionImplToJson(this);
   }
 }
 
 abstract class _GeminiSystemInstruction implements GeminiSystemInstruction {
-  const factory _GeminiSystemInstruction(
-      {required final List<GeminiPart> parts}) = _$GeminiSystemInstructionImpl;
+  const factory _GeminiSystemInstruction({
+    required final List<GeminiPart> parts,
+  }) = _$GeminiSystemInstructionImpl;
 
   factory _GeminiSystemInstruction.fromJson(Map<String, dynamic> json) =
       _$GeminiSystemInstructionImpl.fromJson;
@@ -393,7 +417,7 @@ abstract class _GeminiSystemInstruction implements GeminiSystemInstruction {
   @override
   @JsonKey(ignore: true)
   _$$GeminiSystemInstructionImplCopyWith<_$GeminiSystemInstructionImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 GeminiContent _$GeminiContentFromJson(Map<String, dynamic> json) {
@@ -414,8 +438,9 @@ mixin _$GeminiContent {
 /// @nodoc
 abstract class $GeminiContentCopyWith<$Res> {
   factory $GeminiContentCopyWith(
-          GeminiContent value, $Res Function(GeminiContent) then) =
-      _$GeminiContentCopyWithImpl<$Res, GeminiContent>;
+    GeminiContent value,
+    $Res Function(GeminiContent) then,
+  ) = _$GeminiContentCopyWithImpl<$Res, GeminiContent>;
   @useResult
   $Res call({String role, List<GeminiPart> parts});
 }
@@ -432,20 +457,20 @@ class _$GeminiContentCopyWithImpl<$Res, $Val extends GeminiContent>
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? role = null,
-    Object? parts = null,
-  }) {
-    return _then(_value.copyWith(
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String,
-      parts: null == parts
-          ? _value.parts
-          : parts // ignore: cast_nullable_to_non_nullable
-              as List<GeminiPart>,
-    ) as $Val);
+  $Res call({Object? role = null, Object? parts = null}) {
+    return _then(
+      _value.copyWith(
+            role: null == role
+                ? _value.role
+                : role // ignore: cast_nullable_to_non_nullable
+                      as String,
+            parts: null == parts
+                ? _value.parts
+                : parts // ignore: cast_nullable_to_non_nullable
+                      as List<GeminiPart>,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -453,8 +478,9 @@ class _$GeminiContentCopyWithImpl<$Res, $Val extends GeminiContent>
 abstract class _$$GeminiContentImplCopyWith<$Res>
     implements $GeminiContentCopyWith<$Res> {
   factory _$$GeminiContentImplCopyWith(
-          _$GeminiContentImpl value, $Res Function(_$GeminiContentImpl) then) =
-      __$$GeminiContentImplCopyWithImpl<$Res>;
+    _$GeminiContentImpl value,
+    $Res Function(_$GeminiContentImpl) then,
+  ) = __$$GeminiContentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String role, List<GeminiPart> parts});
@@ -465,34 +491,35 @@ class __$$GeminiContentImplCopyWithImpl<$Res>
     extends _$GeminiContentCopyWithImpl<$Res, _$GeminiContentImpl>
     implements _$$GeminiContentImplCopyWith<$Res> {
   __$$GeminiContentImplCopyWithImpl(
-      _$GeminiContentImpl _value, $Res Function(_$GeminiContentImpl) _then)
-      : super(_value, _then);
+    _$GeminiContentImpl _value,
+    $Res Function(_$GeminiContentImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? role = null,
-    Object? parts = null,
-  }) {
-    return _then(_$GeminiContentImpl(
-      role: null == role
-          ? _value.role
-          : role // ignore: cast_nullable_to_non_nullable
-              as String,
-      parts: null == parts
-          ? _value._parts
-          : parts // ignore: cast_nullable_to_non_nullable
-              as List<GeminiPart>,
-    ));
+  $Res call({Object? role = null, Object? parts = null}) {
+    return _then(
+      _$GeminiContentImpl(
+        role: null == role
+            ? _value.role
+            : role // ignore: cast_nullable_to_non_nullable
+                  as String,
+        parts: null == parts
+            ? _value._parts
+            : parts // ignore: cast_nullable_to_non_nullable
+                  as List<GeminiPart>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$GeminiContentImpl implements _GeminiContent {
-  const _$GeminiContentImpl(
-      {required this.role, required final List<GeminiPart> parts})
-      : _parts = parts;
+  const _$GeminiContentImpl({
+    required this.role,
+    required final List<GeminiPart> parts,
+  }) : _parts = parts;
 
   factory _$GeminiContentImpl.fromJson(Map<String, dynamic> json) =>
       _$$GeminiContentImplFromJson(json);
@@ -524,7 +551,10 @@ class _$GeminiContentImpl implements _GeminiContent {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, role, const DeepCollectionEquality().hash(_parts));
+    runtimeType,
+    role,
+    const DeepCollectionEquality().hash(_parts),
+  );
 
   @JsonKey(ignore: true)
   @override
@@ -534,16 +564,15 @@ class _$GeminiContentImpl implements _GeminiContent {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeminiContentImplToJson(
-      this,
-    );
+    return _$$GeminiContentImplToJson(this);
   }
 }
 
 abstract class _GeminiContent implements GeminiContent {
-  const factory _GeminiContent(
-      {required final String role,
-      required final List<GeminiPart> parts}) = _$GeminiContentImpl;
+  const factory _GeminiContent({
+    required final String role,
+    required final List<GeminiPart> parts,
+  }) = _$GeminiContentImpl;
 
   factory _GeminiContent.fromJson(Map<String, dynamic> json) =
       _$GeminiContentImpl.fromJson;
@@ -575,8 +604,9 @@ mixin _$GeminiPart {
 /// @nodoc
 abstract class $GeminiPartCopyWith<$Res> {
   factory $GeminiPartCopyWith(
-          GeminiPart value, $Res Function(GeminiPart) then) =
-      _$GeminiPartCopyWithImpl<$Res, GeminiPart>;
+    GeminiPart value,
+    $Res Function(GeminiPart) then,
+  ) = _$GeminiPartCopyWithImpl<$Res, GeminiPart>;
   @useResult
   $Res call({String text});
 }
@@ -593,15 +623,16 @@ class _$GeminiPartCopyWithImpl<$Res, $Val extends GeminiPart>
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? text = null,
-  }) {
-    return _then(_value.copyWith(
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? text = null}) {
+    return _then(
+      _value.copyWith(
+            text: null == text
+                ? _value.text
+                : text // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -609,8 +640,9 @@ class _$GeminiPartCopyWithImpl<$Res, $Val extends GeminiPart>
 abstract class _$$GeminiPartImplCopyWith<$Res>
     implements $GeminiPartCopyWith<$Res> {
   factory _$$GeminiPartImplCopyWith(
-          _$GeminiPartImpl value, $Res Function(_$GeminiPartImpl) then) =
-      __$$GeminiPartImplCopyWithImpl<$Res>;
+    _$GeminiPartImpl value,
+    $Res Function(_$GeminiPartImpl) then,
+  ) = __$$GeminiPartImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String text});
@@ -621,20 +653,21 @@ class __$$GeminiPartImplCopyWithImpl<$Res>
     extends _$GeminiPartCopyWithImpl<$Res, _$GeminiPartImpl>
     implements _$$GeminiPartImplCopyWith<$Res> {
   __$$GeminiPartImplCopyWithImpl(
-      _$GeminiPartImpl _value, $Res Function(_$GeminiPartImpl) _then)
-      : super(_value, _then);
+    _$GeminiPartImpl _value,
+    $Res Function(_$GeminiPartImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? text = null,
-  }) {
-    return _then(_$GeminiPartImpl(
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? text = null}) {
+    return _then(
+      _$GeminiPartImpl(
+        text: null == text
+            ? _value.text
+            : text // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -674,9 +707,7 @@ class _$GeminiPartImpl implements _GeminiPart {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeminiPartImplToJson(
-      this,
-    );
+    return _$$GeminiPartImplToJson(this);
   }
 }
 
@@ -695,7 +726,8 @@ abstract class _GeminiPart implements GeminiPart {
 }
 
 GeminiGenerationConfig _$GeminiGenerationConfigFromJson(
-    Map<String, dynamic> json) {
+  Map<String, dynamic> json,
+) {
   return _GeminiGenerationConfig.fromJson(json);
 }
 
@@ -713,18 +745,22 @@ mixin _$GeminiGenerationConfig {
 
 /// @nodoc
 abstract class $GeminiGenerationConfigCopyWith<$Res> {
-  factory $GeminiGenerationConfigCopyWith(GeminiGenerationConfig value,
-          $Res Function(GeminiGenerationConfig) then) =
-      _$GeminiGenerationConfigCopyWithImpl<$Res, GeminiGenerationConfig>;
+  factory $GeminiGenerationConfigCopyWith(
+    GeminiGenerationConfig value,
+    $Res Function(GeminiGenerationConfig) then,
+  ) = _$GeminiGenerationConfigCopyWithImpl<$Res, GeminiGenerationConfig>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'maxOutputTokens') int maxOutputTokens,
-      double temperature});
+  $Res call({
+    @JsonKey(name: 'maxOutputTokens') int maxOutputTokens,
+    double temperature,
+  });
 }
 
 /// @nodoc
-class _$GeminiGenerationConfigCopyWithImpl<$Res,
-        $Val extends GeminiGenerationConfig>
+class _$GeminiGenerationConfigCopyWithImpl<
+  $Res,
+  $Val extends GeminiGenerationConfig
+>
     implements $GeminiGenerationConfigCopyWith<$Res> {
   _$GeminiGenerationConfigCopyWithImpl(this._value, this._then);
 
@@ -735,20 +771,20 @@ class _$GeminiGenerationConfigCopyWithImpl<$Res,
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? maxOutputTokens = null,
-    Object? temperature = null,
-  }) {
-    return _then(_value.copyWith(
-      maxOutputTokens: null == maxOutputTokens
-          ? _value.maxOutputTokens
-          : maxOutputTokens // ignore: cast_nullable_to_non_nullable
-              as int,
-      temperature: null == temperature
-          ? _value.temperature
-          : temperature // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
+  $Res call({Object? maxOutputTokens = null, Object? temperature = null}) {
+    return _then(
+      _value.copyWith(
+            maxOutputTokens: null == maxOutputTokens
+                ? _value.maxOutputTokens
+                : maxOutputTokens // ignore: cast_nullable_to_non_nullable
+                      as int,
+            temperature: null == temperature
+                ? _value.temperature
+                : temperature // ignore: cast_nullable_to_non_nullable
+                      as double,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -756,51 +792,52 @@ class _$GeminiGenerationConfigCopyWithImpl<$Res,
 abstract class _$$GeminiGenerationConfigImplCopyWith<$Res>
     implements $GeminiGenerationConfigCopyWith<$Res> {
   factory _$$GeminiGenerationConfigImplCopyWith(
-          _$GeminiGenerationConfigImpl value,
-          $Res Function(_$GeminiGenerationConfigImpl) then) =
-      __$$GeminiGenerationConfigImplCopyWithImpl<$Res>;
+    _$GeminiGenerationConfigImpl value,
+    $Res Function(_$GeminiGenerationConfigImpl) then,
+  ) = __$$GeminiGenerationConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'maxOutputTokens') int maxOutputTokens,
-      double temperature});
+  $Res call({
+    @JsonKey(name: 'maxOutputTokens') int maxOutputTokens,
+    double temperature,
+  });
 }
 
 /// @nodoc
 class __$$GeminiGenerationConfigImplCopyWithImpl<$Res>
-    extends _$GeminiGenerationConfigCopyWithImpl<$Res,
-        _$GeminiGenerationConfigImpl>
+    extends
+        _$GeminiGenerationConfigCopyWithImpl<$Res, _$GeminiGenerationConfigImpl>
     implements _$$GeminiGenerationConfigImplCopyWith<$Res> {
   __$$GeminiGenerationConfigImplCopyWithImpl(
-      _$GeminiGenerationConfigImpl _value,
-      $Res Function(_$GeminiGenerationConfigImpl) _then)
-      : super(_value, _then);
+    _$GeminiGenerationConfigImpl _value,
+    $Res Function(_$GeminiGenerationConfigImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? maxOutputTokens = null,
-    Object? temperature = null,
-  }) {
-    return _then(_$GeminiGenerationConfigImpl(
-      maxOutputTokens: null == maxOutputTokens
-          ? _value.maxOutputTokens
-          : maxOutputTokens // ignore: cast_nullable_to_non_nullable
-              as int,
-      temperature: null == temperature
-          ? _value.temperature
-          : temperature // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
+  $Res call({Object? maxOutputTokens = null, Object? temperature = null}) {
+    return _then(
+      _$GeminiGenerationConfigImpl(
+        maxOutputTokens: null == maxOutputTokens
+            ? _value.maxOutputTokens
+            : maxOutputTokens // ignore: cast_nullable_to_non_nullable
+                  as int,
+        temperature: null == temperature
+            ? _value.temperature
+            : temperature // ignore: cast_nullable_to_non_nullable
+                  as double,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$GeminiGenerationConfigImpl implements _GeminiGenerationConfig {
-  const _$GeminiGenerationConfigImpl(
-      {@JsonKey(name: 'maxOutputTokens') required this.maxOutputTokens,
-      required this.temperature});
+  const _$GeminiGenerationConfigImpl({
+    @JsonKey(name: 'maxOutputTokens') required this.maxOutputTokens,
+    required this.temperature,
+  });
 
   factory _$GeminiGenerationConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$GeminiGenerationConfigImplFromJson(json);
@@ -835,21 +872,23 @@ class _$GeminiGenerationConfigImpl implements _GeminiGenerationConfig {
   @override
   @pragma('vm:prefer-inline')
   _$$GeminiGenerationConfigImplCopyWith<_$GeminiGenerationConfigImpl>
-      get copyWith => __$$GeminiGenerationConfigImplCopyWithImpl<
-          _$GeminiGenerationConfigImpl>(this, _$identity);
+  get copyWith =>
+      __$$GeminiGenerationConfigImplCopyWithImpl<_$GeminiGenerationConfigImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeminiGenerationConfigImplToJson(
-      this,
-    );
+    return _$$GeminiGenerationConfigImplToJson(this);
   }
 }
 
 abstract class _GeminiGenerationConfig implements GeminiGenerationConfig {
-  const factory _GeminiGenerationConfig(
-      {@JsonKey(name: 'maxOutputTokens') required final int maxOutputTokens,
-      required final double temperature}) = _$GeminiGenerationConfigImpl;
+  const factory _GeminiGenerationConfig({
+    @JsonKey(name: 'maxOutputTokens') required final int maxOutputTokens,
+    required final double temperature,
+  }) = _$GeminiGenerationConfigImpl;
 
   factory _GeminiGenerationConfig.fromJson(Map<String, dynamic> json) =
       _$GeminiGenerationConfigImpl.fromJson;
@@ -862,5 +901,5 @@ abstract class _GeminiGenerationConfig implements GeminiGenerationConfig {
   @override
   @JsonKey(ignore: true)
   _$$GeminiGenerationConfigImplCopyWith<_$GeminiGenerationConfigImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }

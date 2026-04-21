@@ -12,7 +12,8 @@ part of 'gemini_response_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 GeminiResponseModel _$GeminiResponseModelFromJson(Map<String, dynamic> json) {
   return _GeminiResponseModel.fromJson(json);
@@ -31,8 +32,9 @@ mixin _$GeminiResponseModel {
 /// @nodoc
 abstract class $GeminiResponseModelCopyWith<$Res> {
   factory $GeminiResponseModelCopyWith(
-          GeminiResponseModel value, $Res Function(GeminiResponseModel) then) =
-      _$GeminiResponseModelCopyWithImpl<$Res, GeminiResponseModel>;
+    GeminiResponseModel value,
+    $Res Function(GeminiResponseModel) then,
+  ) = _$GeminiResponseModelCopyWithImpl<$Res, GeminiResponseModel>;
   @useResult
   $Res call({List<GeminiCandidate> candidates});
 }
@@ -49,24 +51,26 @@ class _$GeminiResponseModelCopyWithImpl<$Res, $Val extends GeminiResponseModel>
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? candidates = null,
-  }) {
-    return _then(_value.copyWith(
-      candidates: null == candidates
-          ? _value.candidates
-          : candidates // ignore: cast_nullable_to_non_nullable
-              as List<GeminiCandidate>,
-    ) as $Val);
+  $Res call({Object? candidates = null}) {
+    return _then(
+      _value.copyWith(
+            candidates: null == candidates
+                ? _value.candidates
+                : candidates // ignore: cast_nullable_to_non_nullable
+                      as List<GeminiCandidate>,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$GeminiResponseModelImplCopyWith<$Res>
     implements $GeminiResponseModelCopyWith<$Res> {
-  factory _$$GeminiResponseModelImplCopyWith(_$GeminiResponseModelImpl value,
-          $Res Function(_$GeminiResponseModelImpl) then) =
-      __$$GeminiResponseModelImplCopyWithImpl<$Res>;
+  factory _$$GeminiResponseModelImplCopyWith(
+    _$GeminiResponseModelImpl value,
+    $Res Function(_$GeminiResponseModelImpl) then,
+  ) = __$$GeminiResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<GeminiCandidate> candidates});
@@ -76,30 +80,31 @@ abstract class _$$GeminiResponseModelImplCopyWith<$Res>
 class __$$GeminiResponseModelImplCopyWithImpl<$Res>
     extends _$GeminiResponseModelCopyWithImpl<$Res, _$GeminiResponseModelImpl>
     implements _$$GeminiResponseModelImplCopyWith<$Res> {
-  __$$GeminiResponseModelImplCopyWithImpl(_$GeminiResponseModelImpl _value,
-      $Res Function(_$GeminiResponseModelImpl) _then)
-      : super(_value, _then);
+  __$$GeminiResponseModelImplCopyWithImpl(
+    _$GeminiResponseModelImpl _value,
+    $Res Function(_$GeminiResponseModelImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? candidates = null,
-  }) {
-    return _then(_$GeminiResponseModelImpl(
-      candidates: null == candidates
-          ? _value._candidates
-          : candidates // ignore: cast_nullable_to_non_nullable
-              as List<GeminiCandidate>,
-    ));
+  $Res call({Object? candidates = null}) {
+    return _then(
+      _$GeminiResponseModelImpl(
+        candidates: null == candidates
+            ? _value._candidates
+            : candidates // ignore: cast_nullable_to_non_nullable
+                  as List<GeminiCandidate>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$GeminiResponseModelImpl implements _GeminiResponseModel {
-  const _$GeminiResponseModelImpl(
-      {required final List<GeminiCandidate> candidates})
-      : _candidates = candidates;
+  const _$GeminiResponseModelImpl({
+    required final List<GeminiCandidate> candidates,
+  }) : _candidates = candidates;
 
   factory _$GeminiResponseModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$GeminiResponseModelImplFromJson(json);
@@ -122,34 +127,38 @@ class _$GeminiResponseModelImpl implements _GeminiResponseModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GeminiResponseModelImpl &&
-            const DeepCollectionEquality()
-                .equals(other._candidates, _candidates));
+            const DeepCollectionEquality().equals(
+              other._candidates,
+              _candidates,
+            ));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_candidates));
+    runtimeType,
+    const DeepCollectionEquality().hash(_candidates),
+  );
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GeminiResponseModelImplCopyWith<_$GeminiResponseModelImpl> get copyWith =>
       __$$GeminiResponseModelImplCopyWithImpl<_$GeminiResponseModelImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeminiResponseModelImplToJson(
-      this,
-    );
+    return _$$GeminiResponseModelImplToJson(this);
   }
 }
 
 abstract class _GeminiResponseModel implements GeminiResponseModel {
-  const factory _GeminiResponseModel(
-          {required final List<GeminiCandidate> candidates}) =
-      _$GeminiResponseModelImpl;
+  const factory _GeminiResponseModel({
+    required final List<GeminiCandidate> candidates,
+  }) = _$GeminiResponseModelImpl;
 
   factory _GeminiResponseModel.fromJson(Map<String, dynamic> json) =
       _$GeminiResponseModelImpl.fromJson;
@@ -179,8 +188,9 @@ mixin _$GeminiCandidate {
 /// @nodoc
 abstract class $GeminiCandidateCopyWith<$Res> {
   factory $GeminiCandidateCopyWith(
-          GeminiCandidate value, $Res Function(GeminiCandidate) then) =
-      _$GeminiCandidateCopyWithImpl<$Res, GeminiCandidate>;
+    GeminiCandidate value,
+    $Res Function(GeminiCandidate) then,
+  ) = _$GeminiCandidateCopyWithImpl<$Res, GeminiCandidate>;
   @useResult
   $Res call({GeminiCandidateContent content});
 
@@ -199,15 +209,16 @@ class _$GeminiCandidateCopyWithImpl<$Res, $Val extends GeminiCandidate>
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? content = null,
-  }) {
-    return _then(_value.copyWith(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as GeminiCandidateContent,
-    ) as $Val);
+  $Res call({Object? content = null}) {
+    return _then(
+      _value.copyWith(
+            content: null == content
+                ? _value.content
+                : content // ignore: cast_nullable_to_non_nullable
+                      as GeminiCandidateContent,
+          )
+          as $Val,
+    );
   }
 
   @override
@@ -222,9 +233,10 @@ class _$GeminiCandidateCopyWithImpl<$Res, $Val extends GeminiCandidate>
 /// @nodoc
 abstract class _$$GeminiCandidateImplCopyWith<$Res>
     implements $GeminiCandidateCopyWith<$Res> {
-  factory _$$GeminiCandidateImplCopyWith(_$GeminiCandidateImpl value,
-          $Res Function(_$GeminiCandidateImpl) then) =
-      __$$GeminiCandidateImplCopyWithImpl<$Res>;
+  factory _$$GeminiCandidateImplCopyWith(
+    _$GeminiCandidateImpl value,
+    $Res Function(_$GeminiCandidateImpl) then,
+  ) = __$$GeminiCandidateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({GeminiCandidateContent content});
@@ -238,20 +250,21 @@ class __$$GeminiCandidateImplCopyWithImpl<$Res>
     extends _$GeminiCandidateCopyWithImpl<$Res, _$GeminiCandidateImpl>
     implements _$$GeminiCandidateImplCopyWith<$Res> {
   __$$GeminiCandidateImplCopyWithImpl(
-      _$GeminiCandidateImpl _value, $Res Function(_$GeminiCandidateImpl) _then)
-      : super(_value, _then);
+    _$GeminiCandidateImpl _value,
+    $Res Function(_$GeminiCandidateImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? content = null,
-  }) {
-    return _then(_$GeminiCandidateImpl(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as GeminiCandidateContent,
-    ));
+  $Res call({Object? content = null}) {
+    return _then(
+      _$GeminiCandidateImpl(
+        content: null == content
+            ? _value.content
+            : content // ignore: cast_nullable_to_non_nullable
+                  as GeminiCandidateContent,
+      ),
+    );
   }
 }
 
@@ -288,19 +301,20 @@ class _$GeminiCandidateImpl implements _GeminiCandidate {
   @pragma('vm:prefer-inline')
   _$$GeminiCandidateImplCopyWith<_$GeminiCandidateImpl> get copyWith =>
       __$$GeminiCandidateImplCopyWithImpl<_$GeminiCandidateImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeminiCandidateImplToJson(
-      this,
-    );
+    return _$$GeminiCandidateImplToJson(this);
   }
 }
 
 abstract class _GeminiCandidate implements GeminiCandidate {
-  const factory _GeminiCandidate(
-      {required final GeminiCandidateContent content}) = _$GeminiCandidateImpl;
+  const factory _GeminiCandidate({
+    required final GeminiCandidateContent content,
+  }) = _$GeminiCandidateImpl;
 
   factory _GeminiCandidate.fromJson(Map<String, dynamic> json) =
       _$GeminiCandidateImpl.fromJson;
@@ -314,7 +328,8 @@ abstract class _GeminiCandidate implements GeminiCandidate {
 }
 
 GeminiCandidateContent _$GeminiCandidateContentFromJson(
-    Map<String, dynamic> json) {
+  Map<String, dynamic> json,
+) {
   return _GeminiCandidateContent.fromJson(json);
 }
 
@@ -330,16 +345,19 @@ mixin _$GeminiCandidateContent {
 
 /// @nodoc
 abstract class $GeminiCandidateContentCopyWith<$Res> {
-  factory $GeminiCandidateContentCopyWith(GeminiCandidateContent value,
-          $Res Function(GeminiCandidateContent) then) =
-      _$GeminiCandidateContentCopyWithImpl<$Res, GeminiCandidateContent>;
+  factory $GeminiCandidateContentCopyWith(
+    GeminiCandidateContent value,
+    $Res Function(GeminiCandidateContent) then,
+  ) = _$GeminiCandidateContentCopyWithImpl<$Res, GeminiCandidateContent>;
   @useResult
   $Res call({List<GeminiCandidatePart> parts});
 }
 
 /// @nodoc
-class _$GeminiCandidateContentCopyWithImpl<$Res,
-        $Val extends GeminiCandidateContent>
+class _$GeminiCandidateContentCopyWithImpl<
+  $Res,
+  $Val extends GeminiCandidateContent
+>
     implements $GeminiCandidateContentCopyWith<$Res> {
   _$GeminiCandidateContentCopyWithImpl(this._value, this._then);
 
@@ -350,15 +368,16 @@ class _$GeminiCandidateContentCopyWithImpl<$Res,
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? parts = null,
-  }) {
-    return _then(_value.copyWith(
-      parts: null == parts
-          ? _value.parts
-          : parts // ignore: cast_nullable_to_non_nullable
-              as List<GeminiCandidatePart>,
-    ) as $Val);
+  $Res call({Object? parts = null}) {
+    return _then(
+      _value.copyWith(
+            parts: null == parts
+                ? _value.parts
+                : parts // ignore: cast_nullable_to_non_nullable
+                      as List<GeminiCandidatePart>,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -366,9 +385,9 @@ class _$GeminiCandidateContentCopyWithImpl<$Res,
 abstract class _$$GeminiCandidateContentImplCopyWith<$Res>
     implements $GeminiCandidateContentCopyWith<$Res> {
   factory _$$GeminiCandidateContentImplCopyWith(
-          _$GeminiCandidateContentImpl value,
-          $Res Function(_$GeminiCandidateContentImpl) then) =
-      __$$GeminiCandidateContentImplCopyWithImpl<$Res>;
+    _$GeminiCandidateContentImpl value,
+    $Res Function(_$GeminiCandidateContentImpl) then,
+  ) = __$$GeminiCandidateContentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<GeminiCandidatePart> parts});
@@ -376,34 +395,34 @@ abstract class _$$GeminiCandidateContentImplCopyWith<$Res>
 
 /// @nodoc
 class __$$GeminiCandidateContentImplCopyWithImpl<$Res>
-    extends _$GeminiCandidateContentCopyWithImpl<$Res,
-        _$GeminiCandidateContentImpl>
+    extends
+        _$GeminiCandidateContentCopyWithImpl<$Res, _$GeminiCandidateContentImpl>
     implements _$$GeminiCandidateContentImplCopyWith<$Res> {
   __$$GeminiCandidateContentImplCopyWithImpl(
-      _$GeminiCandidateContentImpl _value,
-      $Res Function(_$GeminiCandidateContentImpl) _then)
-      : super(_value, _then);
+    _$GeminiCandidateContentImpl _value,
+    $Res Function(_$GeminiCandidateContentImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? parts = null,
-  }) {
-    return _then(_$GeminiCandidateContentImpl(
-      parts: null == parts
-          ? _value._parts
-          : parts // ignore: cast_nullable_to_non_nullable
-              as List<GeminiCandidatePart>,
-    ));
+  $Res call({Object? parts = null}) {
+    return _then(
+      _$GeminiCandidateContentImpl(
+        parts: null == parts
+            ? _value._parts
+            : parts // ignore: cast_nullable_to_non_nullable
+                  as List<GeminiCandidatePart>,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$GeminiCandidateContentImpl implements _GeminiCandidateContent {
-  const _$GeminiCandidateContentImpl(
-      {required final List<GeminiCandidatePart> parts})
-      : _parts = parts;
+  const _$GeminiCandidateContentImpl({
+    required final List<GeminiCandidatePart> parts,
+  }) : _parts = parts;
 
   factory _$GeminiCandidateContentImpl.fromJson(Map<String, dynamic> json) =>
       _$$GeminiCandidateContentImplFromJson(json);
@@ -438,21 +457,22 @@ class _$GeminiCandidateContentImpl implements _GeminiCandidateContent {
   @override
   @pragma('vm:prefer-inline')
   _$$GeminiCandidateContentImplCopyWith<_$GeminiCandidateContentImpl>
-      get copyWith => __$$GeminiCandidateContentImplCopyWithImpl<
-          _$GeminiCandidateContentImpl>(this, _$identity);
+  get copyWith =>
+      __$$GeminiCandidateContentImplCopyWithImpl<_$GeminiCandidateContentImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeminiCandidateContentImplToJson(
-      this,
-    );
+    return _$$GeminiCandidateContentImplToJson(this);
   }
 }
 
 abstract class _GeminiCandidateContent implements GeminiCandidateContent {
-  const factory _GeminiCandidateContent(
-          {required final List<GeminiCandidatePart> parts}) =
-      _$GeminiCandidateContentImpl;
+  const factory _GeminiCandidateContent({
+    required final List<GeminiCandidatePart> parts,
+  }) = _$GeminiCandidateContentImpl;
 
   factory _GeminiCandidateContent.fromJson(Map<String, dynamic> json) =
       _$GeminiCandidateContentImpl.fromJson;
@@ -462,7 +482,7 @@ abstract class _GeminiCandidateContent implements GeminiCandidateContent {
   @override
   @JsonKey(ignore: true)
   _$$GeminiCandidateContentImplCopyWith<_$GeminiCandidateContentImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 GeminiCandidatePart _$GeminiCandidatePartFromJson(Map<String, dynamic> json) {
@@ -482,8 +502,9 @@ mixin _$GeminiCandidatePart {
 /// @nodoc
 abstract class $GeminiCandidatePartCopyWith<$Res> {
   factory $GeminiCandidatePartCopyWith(
-          GeminiCandidatePart value, $Res Function(GeminiCandidatePart) then) =
-      _$GeminiCandidatePartCopyWithImpl<$Res, GeminiCandidatePart>;
+    GeminiCandidatePart value,
+    $Res Function(GeminiCandidatePart) then,
+  ) = _$GeminiCandidatePartCopyWithImpl<$Res, GeminiCandidatePart>;
   @useResult
   $Res call({String text});
 }
@@ -500,24 +521,26 @@ class _$GeminiCandidatePartCopyWithImpl<$Res, $Val extends GeminiCandidatePart>
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? text = null,
-  }) {
-    return _then(_value.copyWith(
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? text = null}) {
+    return _then(
+      _value.copyWith(
+            text: null == text
+                ? _value.text
+                : text // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$GeminiCandidatePartImplCopyWith<$Res>
     implements $GeminiCandidatePartCopyWith<$Res> {
-  factory _$$GeminiCandidatePartImplCopyWith(_$GeminiCandidatePartImpl value,
-          $Res Function(_$GeminiCandidatePartImpl) then) =
-      __$$GeminiCandidatePartImplCopyWithImpl<$Res>;
+  factory _$$GeminiCandidatePartImplCopyWith(
+    _$GeminiCandidatePartImpl value,
+    $Res Function(_$GeminiCandidatePartImpl) then,
+  ) = __$$GeminiCandidatePartImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String text});
@@ -527,21 +550,22 @@ abstract class _$$GeminiCandidatePartImplCopyWith<$Res>
 class __$$GeminiCandidatePartImplCopyWithImpl<$Res>
     extends _$GeminiCandidatePartCopyWithImpl<$Res, _$GeminiCandidatePartImpl>
     implements _$$GeminiCandidatePartImplCopyWith<$Res> {
-  __$$GeminiCandidatePartImplCopyWithImpl(_$GeminiCandidatePartImpl _value,
-      $Res Function(_$GeminiCandidatePartImpl) _then)
-      : super(_value, _then);
+  __$$GeminiCandidatePartImplCopyWithImpl(
+    _$GeminiCandidatePartImpl _value,
+    $Res Function(_$GeminiCandidatePartImpl) _then,
+  ) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? text = null,
-  }) {
-    return _then(_$GeminiCandidatePartImpl(
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? text = null}) {
+    return _then(
+      _$GeminiCandidatePartImpl(
+        text: null == text
+            ? _value.text
+            : text // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
   }
 }
 
@@ -578,13 +602,13 @@ class _$GeminiCandidatePartImpl implements _GeminiCandidatePart {
   @pragma('vm:prefer-inline')
   _$$GeminiCandidatePartImplCopyWith<_$GeminiCandidatePartImpl> get copyWith =>
       __$$GeminiCandidatePartImplCopyWithImpl<_$GeminiCandidatePartImpl>(
-          this, _$identity);
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeminiCandidatePartImplToJson(
-      this,
-    );
+    return _$$GeminiCandidatePartImplToJson(this);
   }
 }
 
