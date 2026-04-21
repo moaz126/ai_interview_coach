@@ -57,10 +57,7 @@ class SetupPage extends HookWidget {
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [
-                          colorScheme.primary,
-                          colorScheme.tertiary,
-                        ],
+                        colors: [colorScheme.primary, colorScheme.tertiary],
                       ),
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: [

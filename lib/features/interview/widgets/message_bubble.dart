@@ -21,8 +21,9 @@ class MessageBubble extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: Row(
-        mainAxisAlignment:
-            isUser ? MainAxisAlignment.end : MainAxisAlignment.start,
+        mainAxisAlignment: isUser
+            ? MainAxisAlignment.end
+            : MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           if (!isUser) ...[
@@ -61,9 +62,7 @@ class MessageBubble extends StatelessWidget {
               child: Text(
                 content,
                 style: theme.textTheme.bodyMedium?.copyWith(
-                  color: isUser
-                      ? colorScheme.onPrimary
-                      : colorScheme.onSurface,
+                  color: isUser ? colorScheme.onPrimary : colorScheme.onSurface,
                   height: 1.4,
                 ),
               ),

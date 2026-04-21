@@ -18,10 +18,8 @@ class AiFeedbackModel with _$AiFeedbackModel {
   }) = _AiFeedbackModel;
 
   /// Factory for question-only responses (first message from AI).
-  factory AiFeedbackModel.questionOnly(String question) => AiFeedbackModel(
-        type: 'question',
-        nextQuestion: question,
-      );
+  factory AiFeedbackModel.questionOnly(String question) =>
+      AiFeedbackModel(type: 'question', nextQuestion: question);
 
   factory AiFeedbackModel.fromJson(Map<String, dynamic> json) =>
       _$AiFeedbackModelFromJson(json);

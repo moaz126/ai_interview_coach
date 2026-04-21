@@ -26,5 +26,5 @@ abstract class InterviewRepository {
 
   /// Retrieves all saved interview sessions from local storage.
   Future<({Failure? failure, List<InterviewSession>? sessions})>
-      getSessionHistory();
+  getSessionHistory();
 }

@@ -23,9 +23,9 @@ class InterviewCubit extends Cubit<InterviewState> {
   InterviewCubit({
     required SendMessageUseCase sendMessageUseCase,
     required SaveSessionUseCase saveSessionUseCase,
-  })  : _sendMessageUseCase = sendMessageUseCase,
-        _saveSessionUseCase = saveSessionUseCase,
-        super(const InterviewInitial());
+  }) : _sendMessageUseCase = sendMessageUseCase,
+       _saveSessionUseCase = saveSessionUseCase,
+       super(const InterviewInitial());
 
   /// Initializes the interview session and requests the first question.
   Future<void> init({
@@ -50,30 +50,36 @@ class InterviewCubit extends Cubit<InterviewState> {
     );
 
     if (result.failure != null) {
-      emit(InterviewError(
-        message: result.failure!.message,
-        messages: List.unmodifiable(_messages),
-      ));
+      emit(
+        InterviewError(
+          message: result.failure!.message,
+          messages: List.unmodifiable(_messages),
+        ),
+      );
       return;
     }
 
     final feedback = result.feedback!;
 
     // Add the AI's first question as an assistant message
-    _messages.add(ChatMessage(
-      role: 'assistant',
-      content: feedback.nextQuestion,
-      timestamp: DateTime.now(),
-    ));
+    _messages.add(
+      ChatMessage(
+        role: 'assistant',
+        content: feedback.nextQuestion,
+        timestamp: DateTime.now(),
+      ),
+    );
 
     _questionsAsked++;
 
-    emit(InterviewLoaded(
-      messages: List.unmodifiable(_messages),
-      feedback: feedback,
-      questionsAsked: _questionsAsked,
-      sessionLength: _sessionLength,
-    ));
+    emit(
+      InterviewLoaded(
+        messages: List.unmodifiable(_messages),
+        feedback: feedback,
+        questionsAsked: _questionsAsked,
+        sessionLength: _sessionLength,
+      ),
+    );
   }
 
   /// Sends the user's answer and processes AI feedback.
@@ -81,11 +87,13 @@ class InterviewCubit extends Cubit<InterviewState> {
     if (userMessage.trim().isEmpty) return;
 
     // Add user message to history
-    _messages.add(ChatMessage(
-      role: 'user',
-      content: userMessage,
-      timestamp: DateTime.now(),
-    ));
+    _messages.add(
+      ChatMessage(
+        role: 'user',
+        content: userMessage,
+        timestamp: DateTime.now(),
+      ),
+    );
 
     emit(InterviewLoading(messages: List.unmodifiable(_messages)));
 
@@ -97,10 +105,12 @@ class InterviewCubit extends Cubit<InterviewState> {
     );
 
     if (result.failure != null) {
-      emit(InterviewError(
-        message: result.failure!.message,
-        messages: List.unmodifiable(_messages),
-      ));
+      emit(
+        InterviewError(
+          message: result.failure!.message,
+          messages: List.unmodifiable(_messages),
+        ),
+      );
       return;
     }
 
@@ -112,11 +122,13 @@ class InterviewCubit extends Cubit<InterviewState> {
     }
 
     // Add the AI's response as an assistant message
-    _messages.add(ChatMessage(
-      role: 'assistant',
-      content: feedback.nextQuestion,
-      timestamp: DateTime.now(),
-    ));
+    _messages.add(
+      ChatMessage(
+        role: 'assistant',
+        content: feedback.nextQuestion,
+        timestamp: DateTime.now(),
+      ),
+    );
 
     _questionsAsked++;
 
@@ -141,11 +153,13 @@ class InterviewCubit extends Cubit<InterviewState> {
       return;
     }
 
-    emit(InterviewLoaded(
-      messages: List.unmodifiable(_messages),
-      feedback: feedback,
-      questionsAsked: _questionsAsked,
-      sessionLength: _sessionLength,
-    ));
+    emit(
+      InterviewLoaded(
+        messages: List.unmodifiable(_messages),
+        feedback: feedback,
+        questionsAsked: _questionsAsked,
+        sessionLength: _sessionLength,
+      ),
+    );
   }
 }

@@ -42,7 +42,12 @@ class InterviewLoaded extends InterviewState {
   });
 
   @override
-  List<Object?> get props => [messages, feedback, questionsAsked, sessionLength];
+  List<Object?> get props => [
+    messages,
+    feedback,
+    questionsAsked,
+    sessionLength,
+  ];
 }
 
 /// Session complete — triggers navigation to summary page.

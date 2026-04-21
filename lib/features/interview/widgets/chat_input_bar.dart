@@ -28,9 +28,7 @@ class ChatInputBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: colorScheme.surface,
         border: Border(
-          top: BorderSide(
-            color: colorScheme.outlineVariant.withOpacity(0.3),
-          ),
+          top: BorderSide(color: colorScheme.outlineVariant.withOpacity(0.3)),
         ),
         boxShadow: [
           BoxShadow(
