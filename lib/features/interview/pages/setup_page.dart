@@ -38,8 +38,8 @@ class SetupPage extends HookWidget {
             end: Alignment.bottomRight,
             colors: [
               colorScheme.surface,
-              colorScheme.primaryContainer.withOpacity(0.15),
-              colorScheme.tertiaryContainer.withOpacity(0.1),
+              colorScheme.primaryContainer.withValues(alpha: 0.15),
+              colorScheme.tertiaryContainer.withValues(alpha: 0.1),
             ],
           ),
         ),
@@ -62,7 +62,7 @@ class SetupPage extends HookWidget {
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: [
                         BoxShadow(
-                          color: colorScheme.primary.withOpacity(0.3),
+                          color: colorScheme.primary.withValues(alpha: 0.3),
                           blurRadius: 20,
                           offset: const Offset(0, 8),
                         ),
@@ -185,7 +185,7 @@ class SetupPage extends HookWidget {
                           borderRadius: BorderRadius.circular(16),
                         ),
                         elevation: canStart ? 4 : 0,
-                        shadowColor: colorScheme.primary.withOpacity(0.4),
+                        shadowColor: colorScheme.primary.withValues(alpha: 0.4),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -273,18 +273,18 @@ class _SelectionChip extends StatelessWidget {
             decoration: BoxDecoration(
               color: isSelected
                   ? colorScheme.primary
-                  : colorScheme.surfaceContainerHighest.withOpacity(0.5),
+                  : colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: isSelected
                     ? colorScheme.primary
-                    : colorScheme.outlineVariant.withOpacity(0.5),
+                    : colorScheme.outlineVariant.withValues(alpha: 0.5),
                 width: isSelected ? 2 : 1,
               ),
               boxShadow: isSelected
                   ? [
                       BoxShadow(
-                        color: colorScheme.primary.withOpacity(0.3),
+                        color: colorScheme.primary.withValues(alpha: 0.3),
                         blurRadius: 8,
                         offset: const Offset(0, 2),
                       ),

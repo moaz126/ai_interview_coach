@@ -30,13 +30,13 @@ class FeedbackCard extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    colorScheme.primaryContainer.withOpacity(0.7),
-                    colorScheme.tertiaryContainer.withOpacity(0.5),
+                    colorScheme.primaryContainer.withValues(alpha: 0.7),
+                    colorScheme.tertiaryContainer.withValues(alpha: 0.5),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
-                  color: colorScheme.outlineVariant.withOpacity(0.3),
+                  color: colorScheme.outlineVariant.withValues(alpha: 0.3),
                 ),
               ),
               child: Column(

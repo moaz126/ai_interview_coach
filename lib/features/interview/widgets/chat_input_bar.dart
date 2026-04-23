@@ -28,11 +28,11 @@ class ChatInputBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: colorScheme.surface,
         border: Border(
-          top: BorderSide(color: colorScheme.outlineVariant.withOpacity(0.3)),
+          top: BorderSide(color: colorScheme.outlineVariant.withValues(alpha: 0.3)),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, -2),
           ),
@@ -43,7 +43,7 @@ class ChatInputBar extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                color: colorScheme.surfaceContainerHighest.withOpacity(0.5),
+                color: colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
                 borderRadius: BorderRadius.circular(24),
               ),
               child: TextField(
@@ -61,7 +61,7 @@ class ChatInputBar extends StatelessWidget {
                       ? 'AI is thinking...'
                       : 'Type your answer...',
                   hintStyle: TextStyle(
-                    color: colorScheme.onSurfaceVariant.withOpacity(0.6),
+                    color: colorScheme.onSurfaceVariant.withValues(alpha: 0.6),
                   ),
                   border: InputBorder.none,
                   contentPadding: const EdgeInsets.symmetric(

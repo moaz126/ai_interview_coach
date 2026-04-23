@@ -21,8 +21,8 @@ class SummaryPage extends HookWidget {
             end: Alignment.bottomRight,
             colors: [
               cs.surface,
-              cs.primaryContainer.withOpacity(0.15),
-              cs.tertiaryContainer.withOpacity(0.1),
+              cs.primaryContainer.withValues(alpha: 0.15),
+              cs.tertiaryContainer.withValues(alpha: 0.1),
             ],
           ),
         ),
@@ -41,7 +41,7 @@ class SummaryPage extends HookWidget {
                     borderRadius: BorderRadius.circular(28),
                     boxShadow: [
                       BoxShadow(
-                        color: cs.primary.withOpacity(0.3),
+                        color: cs.primary.withValues(alpha: 0.3),
                         blurRadius: 20,
                         offset: const Offset(0, 8),
                       ),
@@ -73,10 +73,10 @@ class SummaryPage extends HookWidget {
                 Container(
                   padding: const EdgeInsets.all(32),
                   decoration: BoxDecoration(
-                    color: cs.surfaceContainerHighest.withOpacity(0.5),
+                    color: cs.surfaceContainerHighest.withValues(alpha: 0.5),
                     borderRadius: BorderRadius.circular(24),
                     border: Border.all(
-                      color: cs.outlineVariant.withOpacity(0.3),
+                      color: cs.outlineVariant.withValues(alpha: 0.3),
                     ),
                   ),
                   child: Column(
@@ -227,9 +227,9 @@ class _StatCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: cs.surfaceContainerHighest.withOpacity(0.5),
+        color: cs.surfaceContainerHighest.withValues(alpha: 0.5),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: cs.outlineVariant.withOpacity(0.3)),
+        border: Border.all(color: cs.outlineVariant.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [

@@ -206,8 +206,9 @@ class _InterviewBody extends StatelessWidget {
                         timestamp: m.timestamp,
                       );
                     }
-                    if (showFb && i == msgs.length)
+                    if (showFb && i == msgs.length) {
                       return FeedbackCard(feedback: fb);
+                    }
                     return const TypingIndicator();
                   },
                 );

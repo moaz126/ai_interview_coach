@@ -41,7 +41,7 @@ class TypingIndicator extends HookWidget {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.08),
+                  color: Colors.black.withValues(alpha: 0.08),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -68,7 +68,7 @@ class TypingIndicator extends HookWidget {
                           width: 8,
                           height: 8,
                           decoration: BoxDecoration(
-                            color: colorScheme.primary.withOpacity(
+                            color: colorScheme.primary.withValues(alpha: 
                               0.4 + bounce * 0.6,
                             ),
                             shape: BoxShape.circle,
